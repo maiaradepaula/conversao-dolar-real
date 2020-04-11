@@ -2,11 +2,10 @@
 
 
 Live web app:
-
-    [https://desafiostone.netlify.com/] https://desafiostone.netlify.com/
+https://desafiostone.netlify.com/
  
-
 This project was bootstrapped with Create React App. You can find the most recent version of Create React App here.
+https://create-react-app.dev/docs/getting-started/
 
 ## Available Scripts
 
