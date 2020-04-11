@@ -24,6 +24,7 @@ export default class DollarToReal extends Component {
     state = { ...initialState }
 
     componentWillMount() {
+        // Chamando API para trazer cotação dólar atualizada 30 seg 
         axios(`${process.env.REACT_APP_BASE_URL}/json/all/USD`).then(resp => {
             this.setState({ cotacaoDia: resp.data.USD.ask })
         })
@@ -37,25 +38,30 @@ export default class DollarToReal extends Component {
     calcular() {
         //chama novamente API para atualizar a cotação do dia 
         this.componentWillMount()
+        // Cópia do objeto para realizar cálculos 
         const totais = { ...this.state.totais }
-
+        // Verificação de preenchimento de montante
         if (this.state.exchange.montante) { 
 
+        // Replace na vírgula para realizar os calculos
         let montante = this.state.exchange.montante.replace(',','')
+        // IOF * 100 pronto para cálculo de % 
         const IOF = this.state.exchange.formaPagto == 'D' ? '0.011' : '0.064'
+        // Cálculo em Dólar com Taxa do Estado 
         totais.usdComImposto = ((parseFloat(montante) * (parseFloat(this.state.exchange.taxa) / 100)) + (parseFloat(montante)))
+        // Cálculo em Real sem imposto 
         totais.brlSemImposto = (parseFloat(this.state.cotacaoDia) * parseFloat(montante))
+        // Cálculo em Real com imposto IOF 
         totais.brlComImposto= (parseFloat(totais.brlSemImposto * IOF) + parseFloat(totais.brlSemImposto))
-       
+        // Setando objeto calculado  
         this.setState({ totais })
     } else {alert("Digite o valor em Dólar")}
         
     }
-
-
-
+    // Atualização do estado dos objetos com os valores preenchidos dinamicamente
     updateField(event, maskedvalue, floatvalue) {
         const exchange = { ...this.state.exchange }
+        // Retirada dos simbólos para atribuição dos objetos 
         exchange[event.target.name] = event.target.value.replace('$', '').replace('%', '')
         this.setState({ exchange })
     }
