@@ -25,7 +25,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
 
 ### `npm run eject`
 
@@ -34,7 +34,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Built With
 
@@ -43,6 +43,7 @@ Add additional notes about how to deploy this on a live system
 * [bootstrap]
 * [font-awesome]
 * [react-currency-input]
+* [netlifycli]
 
 ## Contributing
 
