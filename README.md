@@ -1,11 +1,11 @@
-Conversão de montante em DÓLAR para REAL
+<h1>Conversão de montante em DÓLAR para REAL</h1>
+
 
 Live web app:
-
-    [https://desafiostone.netlify.com/] https://desafiostone.netlify.com/)
-    demo on https://pleasant-gram.glitch.me/ or go to project repository on github
-
+https://desafiostone.netlify.com/
+ 
 This project was bootstrapped with Create React App. You can find the most recent version of Create React App here.
+https://create-react-app.dev/docs/getting-started/
 
 ## Available Scripts
 
